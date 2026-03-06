@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Randy Forcellina — AI & Technology Strategist</title>
+	<meta name="description" content="Randy Forcellina — AI & Technology Strategist with 30+ years in tech operations, digital rights, and AI consulting.">
+	<meta name="author" content="Randy Forcellina">
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+	<script defer src="assets/fontawesome/js/all.js"></script>
+
+	<style>
+		*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+		:root {
+			--bg: #111113;
+			--surface: #1a1a1d;
+			--text: #ececef;
+			--text-2: #b0b0b8;
+			--text-3: #6e6e78;
+			--accent: #9b6dff;
+			--accent-dim: rgba(155, 109, 255, 0.1);
+			--border: #252528;
+			--radius: 10px;
+		}
+
+		html { scroll-behavior: smooth; }
+
+		body {
+			font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+			background: var(--bg);
+			color: var(--text);
+			line-height: 1.7;
+			font-size: 15px;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		a { color: var(--accent); text-decoration: none; }
+		a:hover { text-decoration: underline; }
+
+		.wrap {
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+
+		/* ===== NAV ===== */
+		.nav {
+			position: sticky;
+			top: 0;
+			z-index: 100;
+			background: rgba(17, 17, 19, 0.85);
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
+			border-bottom: 1px solid var(--border);
+			padding: 0.75rem 0;
+		}
+
+		.nav .wrap {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-logo {
+			height: 28px;
+			width: auto;
+		}
+
+		.nav-right {
+			display: flex;
+			align-items: center;
+			gap: 1.5rem;
+		}
+
+		.nav-link {
+			font-size: 0.8rem;
+			font-weight: 500;
+			color: var(--text-3);
+			text-decoration: none;
+		}
+		.nav-link:hover { color: var(--text); text-decoration: none; }
+
+		.btn {
+			display: inline-block;
+			padding: 0.45rem 1rem;
+			background: var(--accent);
+			color: #fff;
+			font-size: 0.8rem;
+			font-weight: 600;
+			border-radius: 6px;
+			text-decoration: none;
+			transition: opacity 0.2s;
+		}
+		.btn:hover { opacity: 0.88; text-decoration: none; }
+
+		/* ===== HEADER ===== */
+		.header {
+			padding: 4rem 0 3rem;
+		}
+
+		.header-grid {
+			display: grid;
+			grid-template-columns: 220px 1fr;
+			gap: 2.5rem;
+			align-items: start;
+		}
+
+		.header-photo img {
+			width: 100%;
+			display: block;
+			border-radius: var(--radius);
+		}
+
+		.header-info h1 {
+			font-size: 2.4rem;
+			font-weight: 800;
+			letter-spacing: -0.03em;
+			line-height: 1.15;
+			margin-bottom: 0.3rem;
+		}
+
+		.header-title {
+			font-size: 1rem;
+			font-weight: 600;
+			color: var(--accent);
+			margin-bottom: 1.2rem;
+		}
+
+		.header-summary {
+			font-size: 0.92rem;
+			color: var(--text-2);
+			line-height: 1.75;
+			margin-bottom: 1.5rem;
+		}
+
+		.header-contact {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.6rem;
+			margin-bottom: 1rem;
+		}
+
+		.header-contact a {
+			display: inline-block;
+			padding: 0.45rem 1rem;
+			background: var(--surface);
+			border: 1px solid var(--border);
+			border-radius: 6px;
+			color: var(--text);
+			font-size: 0.88rem;
+			font-weight: 500;
+			text-decoration: none;
+			transition: border-color 0.2s;
+		}
+		.header-contact a:hover {
+			border-color: var(--accent);
+			text-decoration: none;
+		}
+
+		.header-social {
+			display: flex;
+			gap: 0.6rem;
+		}
+
+		.header-social a {
+			display: inline-block;
+			padding: 0.45rem 1rem;
+			background: var(--surface);
+			border: 1px solid var(--border);
+			border-radius: 6px;
+			color: var(--text-2);
+			font-size: 0.88rem;
+			font-weight: 500;
+			text-decoration: none;
+			transition: border-color 0.2s;
+		}
+		.header-social a:hover {
+			border-color: var(--accent);
+			color: var(--text);
+			text-decoration: none;
+		}
+
+		/* ===== SECTIONS ===== */
+		.section {
+			padding: 3rem 0;
+			border-top: 1px solid var(--border);
+		}
+
+		.section-title {
+			font-size: 1.1rem;
+			font-weight: 800;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			margin-bottom: 2rem;
+			display: flex;
+			align-items: center;
+			gap: 0.6rem;
+		}
+
+		.section-title::before {
+			content: '';
+			width: 3px;
+			height: 1em;
+			background: var(--accent);
+			border-radius: 2px;
+			flex-shrink: 0;
+		}
+
+		/* ===== EXPERIENCE ===== */
+		.role {
+			padding: 1.6rem 0;
+		}
+
+		.role + .role {
+			border-top: 1px solid var(--border);
+		}
+
+		.role:first-of-type { padding-top: 0; }
+
+		.role-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			flex-wrap: wrap;
+			gap: 0.3rem;
+			margin-bottom: 0.15rem;
+		}
+
+		.role-company {
+			font-size: 0.78rem;
+			font-weight: 700;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: var(--text-2);
+		}
+
+		.role-dates {
+			font-size: 0.8rem;
+			color: var(--text-3);
+		}
+
+		.role h3 {
+			font-size: 1.15rem;
+			font-weight: 700;
+			margin-bottom: 0.15rem;
+		}
+
+		.role-promo {
+			font-size: 0.78rem;
+			color: var(--text-3);
+			margin-bottom: 0.6rem;
+		}
+
+		.role ul {
+			list-style: none;
+			padding: 0;
+		}
+
+		.role li {
+			position: relative;
+			padding-left: 1.1rem;
+			margin-bottom: 0.35rem;
+			font-size: 0.9rem;
+			color: var(--text-2);
+			line-height: 1.7;
+		}
+
+		.role li::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0.7em;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background: var(--text-3);
+		}
+
+		/* ===== SKILLS ===== */
+		.skills-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+		}
+
+		.skill-group {
+			background: var(--surface);
+			border-radius: var(--radius);
+			padding: 1.2rem 1.4rem;
+		}
+
+		.skill-group h4 {
+			font-size: 0.72rem;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: var(--accent);
+			margin-bottom: 0.6rem;
+		}
+
+		.skill-group p {
+			font-size: 0.85rem;
+			color: var(--text-2);
+			line-height: 1.8;
+		}
+
+		.leadership-box {
+			background: var(--surface);
+			border-radius: var(--radius);
+			padding: 1.2rem 1.4rem;
+			margin-top: 1rem;
+		}
+
+		.leadership-box h4 {
+			font-size: 0.72rem;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: var(--accent);
+			margin-bottom: 0.6rem;
+		}
+
+		.leadership-box p {
+			font-size: 0.85rem;
+			color: var(--text-2);
+			line-height: 1.8;
+		}
+
+		/* ===== PROJECTS ===== */
+		.projects-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+		}
+
+		.project {
+			background: var(--surface);
+			border-radius: var(--radius);
+			padding: 1.2rem 1.4rem;
+		}
+
+		.project h4 {
+			font-size: 0.95rem;
+			font-weight: 700;
+			margin-bottom: 0.3rem;
+		}
+
+		.project p {
+			font-size: 0.84rem;
+			color: var(--text-2);
+			line-height: 1.7;
+		}
+
+		/* ===== CREDENTIALS ===== */
+		.creds-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2.5rem;
+		}
+
+		.cred-label {
+			font-size: 0.72rem;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: var(--text-3);
+			margin-bottom: 1rem;
+		}
+
+		.cred {
+			margin-bottom: 0.8rem;
+		}
+
+		.cred-name {
+			font-size: 0.9rem;
+			font-weight: 600;
+		}
+
+		.cred-meta {
+			font-size: 0.8rem;
+			color: var(--text-3);
+		}
+
+		.lang-row {
+			display: flex;
+			gap: 2rem;
+			font-size: 0.88rem;
+			color: var(--text-2);
+			margin-top: 0.3rem;
+		}
+
+		.lang-row strong {
+			color: var(--text);
+		}
+
+		/* ===== FOOTER ===== */
+		.footer {
+			border-top: 1px solid var(--border);
+			padding: 2rem 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 1rem;
+			font-size: 0.78rem;
+			color: var(--text-3);
+		}
+
+		.footer a { color: var(--text-3); }
+		.footer a:hover { color: var(--text); text-decoration: none; }
+
+		.footer-links { display: flex; gap: 1.2rem; }
+
+		/* ===== RESPONSIVE ===== */
+		@media (max-width: 700px) {
+			.header-grid {
+				grid-template-columns: 1fr;
+				gap: 1.5rem;
+			}
+			.header-photo { max-width: 200px; }
+			.header-info h1 { font-size: 1.8rem; }
+			.skills-grid,
+			.projects-grid,
+			.creds-grid {
+				grid-template-columns: 1fr;
+			}
+			.wrap { padding: 0 1.2rem; }
+			.role-row { flex-direction: column; }
+			.footer { flex-direction: column; text-align: center; }
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="nav">
+		<div class="wrap">
+			<img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+			<div class="nav-right">
+				<a href="#experience" class="nav-link">Experience</a>
+				<a href="#expertise" class="nav-link">Skills</a>
+				<a href="#projects" class="nav-link">Projects</a>
+				<a href="mailto:randy@outboost.com" class="btn">Hire Me</a>
+			</div>
+		</div>
+	</nav>
+
+	<header class="header">
+		<div class="wrap">
+			<div class="header-grid">
+				<div class="header-photo">
+					<img src="assets/images/profile.png" alt="Randy Forcellina">
+				</div>
+				<div class="header-info">
+					<h1>Randy Forcellina</h1>
+					<div class="header-title">AI & Technology Strategist</div>
+					<p class="header-summary">AI & Technology Strategist with 30+ years of hands-on experience across technical operations, digital rights management, and business IT. Through Outboost, I help businesses adopt AI in practical ways using Claude, ChatGPT, local models, workflow automation, and hands-on team training. Prior to that, I led rights and monetization operations for large creator catalogs at Special Effects Media and served as Fractional CTO for Bitcoin Park. My background also includes building and operating a long-running IT services business, giving me a strong foundation in infrastructure, troubleshooting, delivery, and client-facing execution.</p>
+
+					<div class="header-contact">
+						<a href="tel:2038545555">(203) 854-5555</a>
+						<a href="mailto:randy@outboost.com">randy@outboost.com</a>
+						<a href="https://www.outboost.com" target="_blank">outboost.com</a>
+					</div>
+					<div class="header-social">
+						<a href="https://x.com/island" target="_blank"><i class="fa-brands fa-x-twitter"></i> @island</a>
+						<a href="https://www.linkedin.com/in/isle" target="_blank"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+
+		<section class="section" id="experience">
+			<div class="wrap">
+				<div class="section-title">Experience</div>
+
+				<article class="role">
+					<div class="role-row">
+						<span class="role-company">Bitcoin Park</span>
+						<span class="role-dates">2023 — Feb 2026</span>
+					</div>
+					<h3>Fractional CTO</h3>
+					<ul>
+						<li>Served as fractional technology lead for Bitcoin Park's Nashville and Austin campuses, aligning infrastructure decisions with community growth, events, and daily operations.</li>
+						<li>Directed the rollout of bitcoin mining tools, equipment, and supporting infrastructure, translating technical requirements into practical deployments.</li>
+						<li>Led network, security, and platform planning to support expansion from one location to two while keeping operations stable and usable for members and staff.</li>
+						<li>Evaluated emerging technologies and guided implementation decisions that supported education, collaboration, and workspace functionality across both campuses.</li>
+					</ul>
+				</article>
+
+				<article class="role">
+					<div class="role-row">
+						<span class="role-company">Special Effects Media (SFX)</span>
+						<span class="role-dates">2019 — 2023</span>
+					</div>
+					<h3>Director of Rights Management</h3>
+					<div class="role-promo">Digital Asset Specialist (2019) &rarr; Head of Content Management (2020) &rarr; Director (2020)</div>
+					<ul>
+						<li>Oversaw digital rights, monetization, and Content ID operations across 200+ YouTube channels generating $12M+ in annual revenue for a YouTube Certified Partner.</li>
+						<li>Managed a catalog of 150,000+ digital assets including music, video, and multimedia content, ensuring DRM compliance, proper licensing, and full monetization.</li>
+						<li>Coordinated with distributed teams across the UK, Hungary, South Africa, and the U.S. to improve rights clearance, resolve disputes, and keep monetization operations moving across multiple markets.</li>
+						<li>Managed content and channel operations for creator brands including Jason Derulo, Sofia Wylie, Michael Le, and Ondreaz &amp; Tony Lopez.</li>
+						<li>Introduced AI-assisted tools for rights tracking, royalty monitoring, and expiration-date management, improving reporting accuracy and reducing manual review work.</li>
+						<li>Analyzed content usage patterns and licensing opportunities to identify monetization gaps across archival catalogs and underused assets.</li>
+					</ul>
+				</article>
+
+				<article class="role">
+					<div class="role-row">
+						<span class="role-company">Outboost (OBC)</span>
+						<span class="role-dates">2003 — Present</span>
+					</div>
+					<h3>Founder &amp; Owner</h3>
+					<ul>
+						<li>Built Outboost from a Fairfield County retail computer store into a Nashville-based AI consulting and IT services practice supporting 30+ active AI and automation clients.</li>
+						<li>Design and deploy Claude, ChatGPT, and local-model workflows for business automation, research, monitoring, and hands-on team enablement.</li>
+						<li>Lead client discovery, implementation, and training engagements that turn day-to-day business problems into practical technical systems teams can actually use.</li>
+						<li>Serviced 10,000+ computers over 22 years for residential and small business clients, building deep experience in troubleshooting, networking, security, data recovery, and client-facing delivery.</li>
+					</ul>
+				</article>
+
+				<article class="role">
+					<div class="role-row">
+						<span class="role-company">Data &amp; Control Equipment</span>
+						<span class="role-dates">1998 — 2003</span>
+					</div>
+					<h3>Technology Manager</h3>
+					<div class="role-promo">Technician (1998) &rarr; Technology Manager (2000)</div>
+					<ul>
+						<li>Managed in-house technicians responsible for installing, configuring, testing, and maintaining specialized Faxbox equipment used in mission-critical healthcare environments across 200+ facilities.</li>
+						<li>Traveled to London to collaborate with engineering teams on the design and development of second-generation Faxbox hardware.</li>
+						<li>Oversaw full lifecycle support — from deployment through monitoring and repair — for systems that required near-zero downtime in hospital and clinical settings.</li>
+					</ul>
+				</article>
+
+				<article class="role">
+					<div class="role-row">
+						<span class="role-company">root web services</span>
+						<span class="role-dates">2001 — 2002</span>
+					</div>
+					<h3>Founder</h3>
+					<ul>
+						<li>Founded a web and graphic design studio focused on building straightforward, affordable websites for homes and small businesses entering the internet for the first time.</li>
+					</ul>
+				</article>
+			</div>
+		</section>
+
+		<section class="section" id="expertise">
+			<div class="wrap">
+				<div class="section-title">Expertise</div>
+
+				<div class="skills-grid">
+					<div class="skill-group">
+						<h4>AI & Automation</h4>
+						<p>Anthropic, Claude, Claude Code, Claude API, OpenAI, ChatGPT, Google Gemini, Meta AI, xAI, Mistral, Perplexity, Ollama, AI Strategy, AI Implementation, Workflow Automation, Prompt Engineering, Custom Workflows, Claude Agent SDK, Local LLMs, Whisper, Stable Diffusion, Team Training</p>
+					</div>
+					<div class="skill-group">
+						<h4>Digital Rights & Media</h4>
+						<p>YouTube Content ID, Rights Management, DRM, Asset Licensing, Catalog Management, Ad Tech, Monetization</p>
+					</div>
+					<div class="skill-group">
+						<h4>Infrastructure & Emerging Tech</h4>
+						<p>Networking, Security, Servers, Cloudflare Workers, Cloudflare Pages, VPS Administration, Bitcoin Infrastructure, Lightning, Nostr, MCP, Data Recovery, Hardware</p>
+					</div>
+					<div class="skill-group">
+						<h4>Development & Delivery</h4>
+						<p>JavaScript, TypeScript, Python, Swift, React, Next.js, FastAPI, Node.js, SwiftUI, Technical Project Management, Process Improvement, Stakeholder Management</p>
+					</div>
+				</div>
+
+				<div class="leadership-box">
+					<h4>Leadership & Delivery</h4>
+					<p>Leadership, Project Management, Strategic Planning, Cross-functional Collaboration, Client Discovery, Client Relations, Team Building, Training & Enablement</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="projects">
+			<div class="wrap">
+				<div class="section-title">Selected Projects</div>
+
+				<div class="projects-grid">
+					<div class="project">
+						<h4>Claude Telegram Bot</h4>
+						<p>Built a TypeScript Telegram bot using the Claude Agent SDK to deliver conversational AI workflows, tool integrations, and production-ready messaging automation.</p>
+					</div>
+					<div class="project">
+						<h4>Nostr DM Bridge</h4>
+						<p>Developed a real-time Nostr monitoring and messaging bridge to track engagement, process relay events, and support automated outreach workflows across decentralized channels.</p>
+					</div>
+					<div class="project">
+						<h4>JaneAusten Voice Chat</h4>
+						<p>Created a Next.js and FastAPI voice-cloning application using local AI models, speech-to-text pipelines, and audio processing tools for interactive voice conversations.</p>
+					</div>
+					<div class="project">
+						<h4>PaybackPal</h4>
+						<p>Built a SwiftUI iOS app with CloudKit sync, biometric authentication, and native Apple platform integrations for a complete end-to-end mobile product.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="credentials">
+			<div class="wrap">
+				<div class="section-title">Credentials</div>
+
+				<div class="creds-grid">
+					<div>
+						<div class="cred-label">Certifications</div>
+						<div class="cred">
+							<div class="cred-name">Claude Code in Action</div>
+							<div class="cred-meta">Anthropic · 2026</div>
+						</div>
+						<div class="cred">
+							<div class="cred-name">Claude 101</div>
+							<div class="cred-meta">Anthropic · 2026</div>
+						</div>
+						<div class="cred">
+							<div class="cred-name">YouTube Asset Monetization</div>
+							<div class="cred-meta">Google · 2020</div>
+						</div>
+						<div class="cred">
+							<div class="cred-name">YouTube Music Rights Management</div>
+							<div class="cred-meta">Google · 2020</div>
+						</div>
+						<div class="cred">
+							<div class="cred-name">YouTube Content Ownership</div>
+							<div class="cred-meta">Google · 2020</div>
+						</div>
+						<div class="cred">
+							<div class="cred-name">CompTIA A+</div>
+							<div class="cred-meta">CompTIA · 1997</div>
+						</div>
+						<div class="cred">
+							<div class="cred-name">CompTIA Network+</div>
+							<div class="cred-meta">CompTIA · 1998</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="cred-label">Education</div>
+						<div class="cred">
+							<div class="cred-name">Bachelor's Degree, Computer Science</div>
+							<div class="cred-meta">NCC · 1998 — 2002</div>
+						</div>
+						<div class="cred">
+							<div class="cred-name">Industrial Electronics Technology</div>
+							<div class="cred-meta">J.M. Wright Tech · 1994 — 1998</div>
+						</div>
+
+						<div class="cred-label" style="margin-top: 1.5rem;">Languages</div>
+						<div class="lang-row">
+							<span><strong>English</strong> — Native</span>
+							<span><strong>Spanish</strong> — Conversational</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer>
+		<div class="wrap footer">
+			<span>&copy; 2026 Randy Forcellina</span>
+			<div class="footer-links">
+				<a href="mailto:randy@outboost.com">Email</a>
+				<a href="https://www.outboost.com" target="_blank">Outboost</a>
+				<a href="https://x.com/island" target="_blank">X</a>
+				<a href="https://www.linkedin.com/in/isle" target="_blank">LinkedIn</a>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>
