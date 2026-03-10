@@ -3,14 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Randy Forcellina — AI & Technology Strategist</title>
-	<meta name="description" content="Randy Forcellina — AI & Technology Strategist with 30+ years in tech operations, digital rights, and AI consulting.">
+	<title>Randy Forcellina — AI &amp; Technology Strategist | AI Native Project Manager</title>
+	<meta name="description" content="Randy Forcellina helps teams turn AI tools into practical systems for operations, research, and delivery.">
 	<meta name="author" content="Randy Forcellina">
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
 	<script defer src="assets/fontawesome/js/all.js"></script>
 
@@ -123,20 +123,31 @@
 			letter-spacing: -0.03em;
 			line-height: 1.15;
 			margin-bottom: 0.3rem;
+			text-wrap: balance;
 		}
 
 		.header-title {
 			font-size: 1rem;
 			font-weight: 600;
 			color: var(--accent);
-			margin-bottom: 1.2rem;
+			margin-bottom: 0.25rem;
+		}
+
+		.header-title-secondary {
+			font-size: 0.84rem;
+			font-weight: 700;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: var(--text-3);
+			margin-bottom: 1rem;
 		}
 
 		.header-summary {
 			font-size: 0.92rem;
 			color: var(--text-2);
-			line-height: 1.75;
+			line-height: 1.7;
 			margin-bottom: 1.5rem;
+			max-width: 42rem;
 		}
 
 		.header-contact {
@@ -291,8 +302,15 @@
 
 		.skill-group {
 			background: var(--surface);
+			border: 1px solid var(--border);
 			border-radius: var(--radius);
 			padding: 1.2rem 1.4rem;
+			transition: border-color 0.2s ease, transform 0.2s ease;
+		}
+
+		.skill-group:hover {
+			border-color: rgba(155, 109, 255, 0.35);
+			transform: translateY(-1px);
 		}
 
 		.skill-group h4 {
@@ -304,17 +322,24 @@
 			margin-bottom: 0.6rem;
 		}
 
-		.skill-group p {
-			font-size: 0.85rem;
-			color: var(--text-2);
-			line-height: 1.8;
+		.chip-set {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.45rem;
 		}
 
 		.leadership-box {
 			background: var(--surface);
+			border: 1px solid var(--border);
 			border-radius: var(--radius);
 			padding: 1.2rem 1.4rem;
 			margin-top: 1rem;
+			transition: border-color 0.2s ease, transform 0.2s ease;
+		}
+
+		.leadership-box:hover {
+			border-color: rgba(155, 109, 255, 0.35);
+			transform: translateY(-1px);
 		}
 
 		.leadership-box h4 {
@@ -326,10 +351,17 @@
 			margin-bottom: 0.6rem;
 		}
 
-		.leadership-box p {
-			font-size: 0.85rem;
+		.chip {
+			display: inline-flex;
+			align-items: center;
+			padding: 0.38rem 0.72rem;
+			border-radius: 999px;
+			background: rgba(255, 255, 255, 0.03);
+			border: 1px solid var(--border);
 			color: var(--text-2);
-			line-height: 1.8;
+			font-size: 0.78rem;
+			font-weight: 600;
+			line-height: 1.2;
 		}
 
 		/* ===== PROJECTS ===== */
@@ -341,8 +373,15 @@
 
 		.project {
 			background: var(--surface);
+			border: 1px solid var(--border);
 			border-radius: var(--radius);
 			padding: 1.2rem 1.4rem;
+			transition: border-color 0.2s ease, transform 0.2s ease;
+		}
+
+		.project:hover {
+			border-color: rgba(155, 109, 255, 0.35);
+			transform: translateY(-1px);
 		}
 
 		.project h4 {
@@ -355,13 +394,50 @@
 			font-size: 0.84rem;
 			color: var(--text-2);
 			line-height: 1.7;
+			margin-bottom: 0.85rem;
+		}
+
+		.project-stack {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.45rem;
+		}
+
+		.stack-tag {
+			display: inline-flex;
+			align-items: center;
+			padding: 0.32rem 0.64rem;
+			border-radius: 999px;
+			background: var(--accent-dim);
+			border: 1px solid rgba(155, 109, 255, 0.2);
+			color: #d8cbff;
+			font-size: 0.74rem;
+			font-weight: 700;
+			line-height: 1.2;
 		}
 
 		/* ===== CREDENTIALS ===== */
 		.creds-grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 2.5rem;
+			gap: 1rem;
+		}
+
+		.cred-card {
+			background: var(--surface);
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			padding: 1.2rem 1.4rem;
+			transition: border-color 0.2s ease, transform 0.2s ease;
+		}
+
+		.cred-card:hover {
+			border-color: rgba(155, 109, 255, 0.35);
+			transform: translateY(-1px);
+		}
+
+		.cred-card.languages-card {
+			grid-column: 1 / -1;
 		}
 
 		.cred-label {
@@ -389,7 +465,8 @@
 
 		.lang-row {
 			display: flex;
-			gap: 2rem;
+			gap: 1rem;
+			flex-wrap: wrap;
 			font-size: 0.88rem;
 			color: var(--text-2);
 			margin-top: 0.3rem;
@@ -459,8 +536,9 @@
 				</div>
 				<div class="header-info">
 					<h1>Randy Forcellina</h1>
-					<div class="header-title">AI & Technology Strategist</div>
-					<p class="header-summary">AI & Technology Strategist with 30+ years of hands-on experience across technical operations, digital rights management, and business IT. Through Outboost, I help businesses adopt AI in practical ways using Claude, ChatGPT, local models, workflow automation, and hands-on team training. Prior to that, I led rights and monetization operations for large creator catalogs at Special Effects Media and served as Fractional CTO for Bitcoin Park. My background also includes building and operating a long-running IT services business, giving me a strong foundation in infrastructure, troubleshooting, delivery, and client-facing execution.</p>
+					<div class="header-title">AI &amp; Technology Strategist</div>
+					<div class="header-title-secondary">AI Native Project Manager</div>
+					<p class="header-summary">I help organizations turn Claude, ChatGPT, and local models into practical systems for operations, research, and delivery. Built on 30+ years across AI consulting, digital rights, infrastructure, and client-facing technical execution.</p>
 
 					<div class="header-contact">
 						<a href="tel:2038545555">(203) 854-5555</a>
@@ -492,7 +570,6 @@
 						<li>Served as fractional technology lead for Bitcoin Park's Nashville and Austin campuses, aligning infrastructure decisions with community growth, events, and daily operations.</li>
 						<li>Directed the rollout of bitcoin mining tools, equipment, and supporting infrastructure, translating technical requirements into practical deployments.</li>
 						<li>Led network, security, and platform planning to support expansion from one location to two while keeping operations stable and usable for members and staff.</li>
-						<li>Evaluated emerging technologies and guided implementation decisions that supported education, collaboration, and workspace functionality across both campuses.</li>
 					</ul>
 				</article>
 
@@ -506,10 +583,8 @@
 					<ul>
 						<li>Oversaw digital rights, monetization, and Content ID operations across 200+ YouTube channels generating $12M+ in annual revenue for a YouTube Certified Partner.</li>
 						<li>Managed a catalog of 150,000+ digital assets including music, video, and multimedia content, ensuring DRM compliance, proper licensing, and full monetization.</li>
-						<li>Coordinated with distributed teams across the UK, Hungary, South Africa, and the U.S. to improve rights clearance, resolve disputes, and keep monetization operations moving across multiple markets.</li>
-						<li>Managed content and channel operations for creator brands including Jason Derulo, Sofia Wylie, Michael Le, and Ondreaz &amp; Tony Lopez.</li>
+						<li>Coordinated teams across the UK, Hungary, South Africa, and the U.S. to improve rights clearance, resolve disputes, and keep monetization operations moving across multiple markets.</li>
 						<li>Introduced AI-assisted tools for rights tracking, royalty monitoring, and expiration-date management, improving reporting accuracy and reducing manual review work.</li>
-						<li>Analyzed content usage patterns and licensing opportunities to identify monetization gaps across archival catalogs and underused assets.</li>
 					</ul>
 				</article>
 
@@ -521,9 +596,9 @@
 					<h3>Founder &amp; Owner</h3>
 					<ul>
 						<li>Built Outboost from a Fairfield County retail computer store into a Nashville-based AI consulting and IT services practice supporting 30+ active AI and automation clients.</li>
-						<li>Design and deploy Claude, ChatGPT, and local-model workflows for business automation, research, monitoring, and hands-on team enablement.</li>
+						<li>Design and deploy Claude, ChatGPT, Claude Code, Gemini, and local-model workflows for business automation, research, monitoring, and team enablement.</li>
 						<li>Lead client discovery, implementation, and training engagements that turn day-to-day business problems into practical technical systems teams can actually use.</li>
-						<li>Serviced 10,000+ computers over 22 years for residential and small business clients, building deep experience in troubleshooting, networking, security, data recovery, and client-facing delivery.</li>
+						<li>Delivered IT services across 10,000+ computers over 22 years, building deep experience in troubleshooting, networking, security, data recovery, and client-facing delivery.</li>
 					</ul>
 				</article>
 
@@ -560,26 +635,86 @@
 
 				<div class="skills-grid">
 					<div class="skill-group">
-						<h4>AI & Automation</h4>
-						<p>Anthropic, Claude, Claude Code, Claude API, OpenAI, ChatGPT, Google Gemini, Meta AI, xAI, Mistral, Perplexity, Ollama, AI Strategy, AI Implementation, Workflow Automation, Prompt Engineering, Custom Workflows, Claude Agent SDK, Local LLMs, Whisper, Stable Diffusion, Team Training</p>
+						<h4>AI &amp; Automation</h4>
+						<div class="chip-set">
+							<span class="chip">Anthropic</span>
+							<span class="chip">Claude</span>
+							<span class="chip">Claude Code</span>
+							<span class="chip">Claude API</span>
+							<span class="chip">OpenAI</span>
+							<span class="chip">ChatGPT</span>
+							<span class="chip">Gemini</span>
+							<span class="chip">Ollama</span>
+							<span class="chip">AI Strategy</span>
+							<span class="chip">AI Implementation</span>
+							<span class="chip">AI Native Project Manager</span>
+							<span class="chip">Workflow Automation</span>
+							<span class="chip">Prompt Engineering</span>
+							<span class="chip">Claude Agent SDK</span>
+							<span class="chip">Local LLMs</span>
+							<span class="chip">Team Training</span>
+						</div>
 					</div>
 					<div class="skill-group">
-						<h4>Digital Rights & Media</h4>
-						<p>YouTube Content ID, Rights Management, DRM, Asset Licensing, Catalog Management, Ad Tech, Monetization</p>
+						<h4>Digital Rights &amp; Media</h4>
+						<div class="chip-set">
+							<span class="chip">YouTube Content ID</span>
+							<span class="chip">Rights Management</span>
+							<span class="chip">DRM</span>
+							<span class="chip">Asset Licensing</span>
+							<span class="chip">Catalog Management</span>
+							<span class="chip">Ad Tech</span>
+							<span class="chip">Monetization</span>
+						</div>
 					</div>
 					<div class="skill-group">
-						<h4>Infrastructure & Emerging Tech</h4>
-						<p>Networking, Security, Servers, Cloudflare Workers, Cloudflare Pages, VPS Administration, Bitcoin Infrastructure, Lightning, Nostr, MCP, Data Recovery, Hardware</p>
+						<h4>Infrastructure &amp; Emerging Tech</h4>
+						<div class="chip-set">
+							<span class="chip">Networking</span>
+							<span class="chip">Security</span>
+							<span class="chip">Servers</span>
+							<span class="chip">Cloudflare Workers</span>
+							<span class="chip">Cloudflare Pages</span>
+							<span class="chip">VPS Administration</span>
+							<span class="chip">Bitcoin Infrastructure</span>
+							<span class="chip">Lightning</span>
+							<span class="chip">Nostr</span>
+							<span class="chip">MCP</span>
+							<span class="chip">Data Recovery</span>
+							<span class="chip">Hardware</span>
+						</div>
 					</div>
 					<div class="skill-group">
-						<h4>Development & Delivery</h4>
-						<p>JavaScript, TypeScript, Python, Swift, React, Next.js, FastAPI, Node.js, SwiftUI, Technical Project Management, Process Improvement, Stakeholder Management</p>
+						<h4>Development &amp; Delivery</h4>
+						<div class="chip-set">
+							<span class="chip">JavaScript</span>
+							<span class="chip">TypeScript</span>
+							<span class="chip">Python</span>
+							<span class="chip">Swift</span>
+							<span class="chip">React</span>
+							<span class="chip">Next.js</span>
+							<span class="chip">FastAPI</span>
+							<span class="chip">Node.js</span>
+							<span class="chip">SwiftUI</span>
+							<span class="chip">Technical Project Management</span>
+							<span class="chip">Process Improvement</span>
+							<span class="chip">Stakeholder Management</span>
+						</div>
 					</div>
 				</div>
 
 				<div class="leadership-box">
-					<h4>Leadership & Delivery</h4>
-					<p>Leadership, Project Management, Strategic Planning, Cross-functional Collaboration, Client Discovery, Client Relations, Team Building, Training & Enablement</p>
+					<h4>Leadership &amp; Delivery</h4>
+					<div class="chip-set">
+						<span class="chip">Leadership</span>
+						<span class="chip">Project Management</span>
+						<span class="chip">Strategic Planning</span>
+						<span class="chip">Cross-functional Collaboration</span>
+						<span class="chip">Client Discovery</span>
+						<span class="chip">Client Relations</span>
+						<span class="chip">Team Building</span>
+						<span class="chip">Training &amp; Enablement</span>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -592,18 +727,38 @@
 					<div class="project">
 						<h4>Claude Telegram Bot</h4>
 						<p>Built a TypeScript Telegram bot using the Claude Agent SDK to deliver conversational AI workflows, tool integrations, and production-ready messaging automation.</p>
+						<div class="project-stack">
+							<span class="stack-tag">TypeScript</span>
+							<span class="stack-tag">Claude SDK</span>
+							<span class="stack-tag">Telegram API</span>
+						</div>
 					</div>
 					<div class="project">
 						<h4>Nostr DM Bridge</h4>
 						<p>Developed a real-time Nostr monitoring and messaging bridge to track engagement, process relay events, and support automated outreach workflows across decentralized channels.</p>
+						<div class="project-stack">
+							<span class="stack-tag">Nostr</span>
+							<span class="stack-tag">Relay Events</span>
+							<span class="stack-tag">Automation</span>
+						</div>
 					</div>
 					<div class="project">
 						<h4>JaneAusten Voice Chat</h4>
 						<p>Created a Next.js and FastAPI voice-cloning application using local AI models, speech-to-text pipelines, and audio processing tools for interactive voice conversations.</p>
+						<div class="project-stack">
+							<span class="stack-tag">Next.js</span>
+							<span class="stack-tag">FastAPI</span>
+							<span class="stack-tag">Local Models</span>
+						</div>
 					</div>
 					<div class="project">
 						<h4>PaybackPal</h4>
 						<p>Built a SwiftUI iOS app with CloudKit sync, biometric authentication, and native Apple platform integrations for a complete end-to-end mobile product.</p>
+						<div class="project-stack">
+							<span class="stack-tag">SwiftUI</span>
+							<span class="stack-tag">CloudKit</span>
+							<span class="stack-tag">Biometrics</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -614,7 +769,7 @@
 				<div class="section-title">Credentials</div>
 
 				<div class="creds-grid">
-					<div>
+					<div class="cred-card">
 						<div class="cred-label">Certifications</div>
 						<div class="cred">
 							<div class="cred-name">Claude Code in Action</div>
@@ -646,7 +801,7 @@
 						</div>
 					</div>
 
-					<div>
+					<div class="cred-card">
 						<div class="cred-label">Education</div>
 						<div class="cred">
 							<div class="cred-name">Bachelor's Degree, Computer Science</div>
@@ -656,8 +811,10 @@
 							<div class="cred-name">Industrial Electronics Technology</div>
 							<div class="cred-meta">J.M. Wright Tech · 1994 — 1998</div>
 						</div>
+					</div>
 
-						<div class="cred-label" style="margin-top: 1.5rem;">Languages</div>
+					<div class="cred-card languages-card">
+						<div class="cred-label">Languages</div>
 						<div class="lang-row">
 							<span><strong>English</strong> — Native</span>
 							<span><strong>Spanish</strong> — Conversational</span>
